@@ -147,29 +147,64 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary-foreground">
-            Фотогалерея
+        <section className="mb-20 animate-fade-in text-center" style={{ animationDelay: '0.4s' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Наши фото
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {photos.map((photo, index) => (
-              <div 
-                key={index} 
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-scale-in"
-                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
-              >
-                <img 
-                  src={photo.url} 
-                  alt={photo.caption}
-                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                  <p className="text-white p-6 text-lg font-medium w-full">
-                    {photo.caption}
-                  </p>
+          <div className="flex flex-wrap justify-center gap-6">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 shadow-lg hover:shadow-xl transition-all">
+                  <Icon name="Camera" size={24} className="mr-2" />
+                  Самые красивые фото
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-3xl text-center mb-6">
+                    Самые красивые фото 📸
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {photos.map((photo, index) => (
+                    <div key={index} className="overflow-hidden rounded-2xl">
+                      <img 
+                        src={photo.url} 
+                        alt={photo.caption}
+                        className="w-full h-80 object-cover"
+                      />
+                    </div>
+                  ))}
                 </div>
-              </div>
-            ))}
+              </DialogContent>
+            </Dialog>
+
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-purple-300 hover:bg-purple-50 shadow-lg hover:shadow-xl transition-all">
+                  <Icon name="Laugh" size={24} className="mr-2" />
+                  Неудачные фото
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-3xl text-center mb-6">
+                    Неудачные фото 😄
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {photos.map((photo, index) => (
+                    <div key={index} className="overflow-hidden rounded-2xl">
+                      <img 
+                        src={photo.url} 
+                        alt={photo.caption}
+                        className="w-full h-80 object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </section>
 
