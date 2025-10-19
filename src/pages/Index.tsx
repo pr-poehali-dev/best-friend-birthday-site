@@ -208,36 +208,40 @@ export default function Index() {
           </h2>
           <div className="relative max-w-6xl mx-auto px-4">
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-            <div className="flex justify-around gap-8 flex-wrap pt-1">
-              {photos.map((photo, index) => {
-                const column = index % 4;
-                const row = Math.floor(index / 4);
-                const offsetTop = column % 2 === 0 ? row * 22 : row * 22 + 6;
-                
-                return (
-                  <div 
-                    key={index} 
-                    className="relative animate-scale-in flex flex-col items-center" 
-                    style={{ 
-                      animationDelay: `${0.8 + index * 0.1}s`,
-                      marginTop: `${offsetTop}rem`
-                    }}
-                  >
-                    <div className="w-0.5 bg-primary mb-2" style={{ height: `${offsetTop + 2}rem` }}></div>
-                    <div className="relative group">
-                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
-                      <img 
-                        src={photo.url} 
-                        alt={photo.caption}
-                        className="w-48 h-64 object-cover rounded-2xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
-                        style={{
-                          transform: `rotate(${index % 3 === 0 ? '3deg' : index % 3 === 1 ? '-3deg' : '1deg'})`
-                        }}
-                      />
+            <div className="relative pt-1 overflow-x-auto scrollbar-hide">
+              <div className="flex gap-12 px-8 pb-4" style={{ width: 'max-content' }}>
+                {photos.map((photo, index) => {
+                  const offsetTop = index % 2 === 0 ? 2 : 8;
+                  
+                  return (
+                    <div 
+                      key={index} 
+                      className="relative animate-scale-in flex flex-col items-center flex-shrink-0" 
+                      style={{ 
+                        animationDelay: `${0.8 + index * 0.1}s`,
+                        marginTop: `${offsetTop}rem`
+                      }}
+                    >
+                      <div className="w-0.5 bg-primary mb-2" style={{ height: `${offsetTop + 2}rem` }}></div>
+                      <div className="relative group">
+                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
+                        <img 
+                          src={photo.url} 
+                          alt={photo.caption}
+                          className="w-64 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
+                          style={{
+                            transform: `rotate(${index % 3 === 0 ? '3deg' : index % 3 === 1 ? '-3deg' : '1deg'})`
+                          }}
+                        />
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+            </div>
+            <div className="text-center mt-6 text-muted-foreground">
+              <Icon name="ChevronsRight" size={24} className="inline-block animate-pulse" />
+              <span className="ml-2">Листай вправо, чтобы увидеть больше</span>
             </div>
           </div>
         </section>
