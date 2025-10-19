@@ -222,7 +222,7 @@ export default function Index() {
                         marginTop: `${offsetTop}rem`
                       }}
                     >
-                      <div className="w-0.5 bg-primary mb-2" style={{ height: `${offsetTop + 2}rem` }}></div>
+                      <div className="w-0.5 bg-primary" style={{ height: `${offsetTop}rem` }}></div>
                       <div className="relative group">
                         <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
                         <img 
@@ -239,10 +239,7 @@ export default function Index() {
                 })}
               </div>
             </div>
-            <div className="text-center mt-6 text-muted-foreground">
-              <Icon name="ChevronsRight" size={24} className="inline-block animate-pulse" />
-              <span className="ml-2">Листай вправо, чтобы увидеть больше</span>
-            </div>
+
           </div>
         </section>
 
