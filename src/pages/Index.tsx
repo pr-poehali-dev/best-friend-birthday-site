@@ -216,6 +216,14 @@ export default function Index() {
                   </p>
                 </div>
               ))}
+              <div className="flex items-center gap-4 pt-4 opacity-60">
+                <div className="flex-shrink-0 mt-1">
+                  <Icon name="MoreHorizontal" size={20} className="text-primary" />
+                </div>
+                <p className="text-lg text-card-foreground italic">
+                  ещё 99+ пожеланий
+                </p>
+              </div>
             </div>
           </div>
         </section>
