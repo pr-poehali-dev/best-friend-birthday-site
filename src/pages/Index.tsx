@@ -229,9 +229,6 @@ export default function Index() {
         </section>
 
         <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary-foreground">
-            Наши воспоминания
-          </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {memories.map((memory, index) => (
               <Card 
