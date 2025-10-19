@@ -312,9 +312,7 @@ export default function Index() {
               <Icon name="Lock" size={32} className="text-purple-600" />
             </div>
             <div className="max-w-4xl mx-auto space-y-6 text-lg text-gray-800 leading-relaxed">
-              <p className="text-xl font-semibold text-purple-800">
-                Дорогая моя, лучшая подруга! ✨
-              </p>
+              <p className="text-xl font-semibold text-purple-800">Дорогая моя, лучшая подруга Лиза ✨</p>
               <p>
                 В этот особенный день я хочу сказать тебе то, что не всегда успеваю выразить словами в повседневной жизни. Ты — невероятный человек, и я безмерно благодарен судьбе за то, что она свела нас вместе.
               </p>
