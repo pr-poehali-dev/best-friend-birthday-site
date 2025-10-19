@@ -11,6 +11,8 @@ export default function Index() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
+    let isPaused = false;
+
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft;
       const scrollWidth = container.scrollWidth;
@@ -24,17 +26,29 @@ export default function Index() {
       }
     };
 
+    const handleMouseEnter = () => {
+      isPaused = true;
+    };
+
+    const handleMouseLeave = () => {
+      isPaused = false;
+    };
+
     container.addEventListener('scroll', handleScroll);
+    container.addEventListener('mouseenter', handleMouseEnter);
+    container.addEventListener('mouseleave', handleMouseLeave);
     container.scrollLeft = container.scrollWidth / 3;
 
     const autoScroll = setInterval(() => {
-      if (container) {
-        container.scrollBy({ left: 1, behavior: 'auto' });
+      if (container && !isPaused) {
+        container.scrollBy({ left: 2, behavior: 'auto' });
       }
-    }, 20);
+    }, 15);
 
     return () => {
       container.removeEventListener('scroll', handleScroll);
+      container.removeEventListener('mouseenter', handleMouseEnter);
+      container.removeEventListener('mouseleave', handleMouseLeave);
       clearInterval(autoScroll);
     };
   }, []);
