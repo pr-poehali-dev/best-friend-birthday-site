@@ -91,9 +91,7 @@ export default function Index() {
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-6">
-                    Поздравления от твоих друзей 💕
-                  </DialogTitle>
+                  <DialogTitle className="text-3xl text-center mb-6">Поздравления от таких же близких💕</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-6">
                   {friendsGreetings.map((greeting, index) => (
