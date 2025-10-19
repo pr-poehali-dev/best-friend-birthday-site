@@ -185,17 +185,13 @@ export default function Index() {
               </DialogTrigger>
               <DialogContent className="max-w-2xl">
                 <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-6">
-                    Неудачные фото 😄
-                  </DialogTitle>
+                  <DialogTitle className="text-3xl text-center mb-6">Неудачные фотки</DialogTitle>
                 </DialogHeader>
                 <div className="text-center py-8">
                   <div className="inline-block p-4 bg-red-100 rounded-full mb-6">
                     <Icon name="X" size={64} className="text-red-500" />
                   </div>
-                  <p className="text-2xl text-gray-700 leading-relaxed">
-                    У данного человека отсутствуют фотки ниже оценки 11/10
-                  </p>
+                  <p className="text-2xl text-gray-700 leading-relaxed">У данного человека отсутствуют фотки ниже оценки 11/10!</p>
                 </div>
               </DialogContent>
             </Dialog>
