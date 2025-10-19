@@ -253,17 +253,9 @@ export default function Index() {
             Фотки реальной богини
           </h2>
           <div className="relative max-w-6xl mx-auto px-4">
-            <Button 
-              onClick={scrollLeft}
-              size="icon"
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-primary/90 hover:bg-primary shadow-2xl h-14 w-14 rounded-full"
-            >
-              <Icon name="ChevronLeft" size={32} />
-            </Button>
-            
             <div 
               ref={scrollContainerRef}
-              className="relative overflow-x-auto scrollbar-hide px-16"
+              className="relative overflow-x-auto scrollbar-hide"
             >
               <div className="flex gap-8 py-4" style={{ width: 'max-content' }}>
                 {[...photos, ...photos, ...photos].map((photo, index) => {
@@ -293,14 +285,6 @@ export default function Index() {
                 })}
               </div>
             </div>
-
-            <Button 
-              onClick={scrollRight}
-              size="icon"
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-primary/90 hover:bg-primary shadow-2xl h-14 w-14 rounded-full"
-            >
-              <Icon name="ChevronRight" size={32} />
-            </Button>
           </div>
         </section>
 
