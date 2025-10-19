@@ -57,8 +57,7 @@ export default function Index() {
             Самую лучшую Лизу в мире
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Этот особенный день создан специально для тебя, чтобы напомнить, 
-            как много ты значишь для меня
+            В этот особенный для тебя день я хотел бы подарить то, что уверен не дарил ещё никто)
           </p>
         </section>
 
