@@ -54,7 +54,7 @@ export default function Index() {
             С Днём Рождения!
           </h1>
           <p className="text-2xl md:text-3xl text-muted-foreground mb-4">
-            Моя любимая подруга
+            Самую лучшую Лизу в мире
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             Этот особенный день создан специально для тебя, чтобы напомнить, 
