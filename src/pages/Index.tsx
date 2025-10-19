@@ -9,33 +9,13 @@ export default function Index() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      if (container.scrollLeft <= 50) {
-        container.style.scrollBehavior = 'auto';
-        container.scrollLeft = container.scrollWidth - container.clientWidth;
-        setTimeout(() => {
-          container.style.scrollBehavior = 'smooth';
-          container.scrollBy({ left: -400, behavior: 'smooth' });
-        }, 50);
-      } else {
-        container.scrollBy({ left: -400, behavior: 'smooth' });
-      }
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
-        container.style.scrollBehavior = 'auto';
-        container.scrollLeft = 0;
-        setTimeout(() => {
-          container.style.scrollBehavior = 'smooth';
-          container.scrollBy({ left: 400, behavior: 'smooth' });
-        }, 50);
-      } else {
-        container.scrollBy({ left: 400, behavior: 'smooth' });
-      }
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
     }
   };
   const memories = [
@@ -254,13 +234,13 @@ export default function Index() {
               className="relative overflow-x-auto scrollbar-hide px-16"
             >
               <div className="flex gap-8 py-4" style={{ width: 'max-content' }}>
-                {photos.map((photo, index) => {
+                {[...photos, ...photos, ...photos].map((photo, index) => {
                   return (
                     <div 
                       key={index} 
                       className="relative animate-scale-in flex-shrink-0" 
                       style={{ 
-                        animationDelay: `${0.8 + index * 0.1}s`
+                        animationDelay: `${0.8 + (index % photos.length) * 0.1}s`
                       }}
                     >
                       <div className="relative group">
