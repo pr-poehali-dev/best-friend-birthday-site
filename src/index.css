@@ -121,4 +121,21 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(-100vh) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(720deg);
+      opacity: 0.3;
+    }
+  }
+
+  .confetti {
+    position: absolute;
+    animation: confetti-fall linear infinite;
+    pointer-events: none;
+  }
 }

@@ -165,6 +165,20 @@ export default function Index() {
       <div className="absolute bottom-1/3 left-1/3 text-5xl opacity-15 animate-pulse" style={{ animationDelay: '0.3s' }}>🎀</div>
       <div className="absolute top-1/2 right-1/3 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.8s' }}>💝</div>
       
+      {[...Array(20)].map((_, i) => (
+        <div
+          key={i}
+          className="confetti text-2xl"
+          style={{
+            left: `${Math.random() * 100}%`,
+            animationDuration: `${3 + Math.random() * 4}s`,
+            animationDelay: `${Math.random() * 5}s`,
+          }}
+        >
+          {['🎉', '🎊', '✨', '💖', '🌟', '🎀', '💝'][Math.floor(Math.random() * 7)]}
+        </div>
+      ))}
+      
       <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
         
         <section className="text-center mb-20 animate-fade-in">
