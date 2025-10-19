@@ -34,6 +34,26 @@ export default function Index() {
     {
       url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/010cd53a-77cb-46b2-8e9f-b665034624ee.jpg",
       caption: "Особенные дни"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/c0278b91-2806-4f29-86b7-a2f3b17bf704.jpg",
+      caption: "Твоя улыбка"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/248217eb-33cd-4036-89ea-23429de6ca04.jpg",
+      caption: "Счастливые моменты"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/c0a118ec-3a72-4d02-b48f-37cd8fbef179.jpg",
+      caption: "Прекрасная ты"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/a8947ed9-71b4-4251-8e58-1ce284fcb872.jpg",
+      caption: "Радость жизни"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/4a4035b0-21b4-4dd3-9cca-4378663f41f2.jpg",
+      caption: "Мечтательная"
     }
   ];
 
@@ -186,32 +206,48 @@ export default function Index() {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
             Фотки реальной богини
           </h2>
-          <div className="relative max-w-6xl mx-auto">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-            <div className="flex justify-around items-start pt-8 flex-wrap gap-8">
-              {photos.map((photo, index) => (
-                <div 
-                  key={index} 
-                  className="relative animate-scale-in" 
-                  style={{ 
-                    animationDelay: `${0.8 + index * 0.15}s`,
-                    marginTop: index % 2 === 0 ? '0' : '3rem'
-                  }}
-                >
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-0.5 h-8 bg-primary"></div>
-                  <div className="relative group">
-                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg"></div>
-                    <img 
-                      src={photo.url} 
-                      alt={photo.caption}
-                      className="w-64 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white transform rotate-2 group-hover:rotate-0 transition-transform duration-300"
-                      style={{
-                        transform: `rotate(${index % 2 === 0 ? '2deg' : '-2deg'})`
-                      }}
-                    />
+          <div className="relative max-w-6xl mx-auto px-4">
+            <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
+              <line x1="10%" y1="0" x2="10%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
+              <line x1="35%" y1="0" x2="35%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
+              <line x1="65%" y1="0" x2="65%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
+              <line x1="90%" y1="0" x2="90%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
+            </svg>
+            <div className="grid grid-cols-4 gap-8 relative" style={{ zIndex: 2 }}>
+              {photos.map((photo, index) => {
+                const positions = [
+                  { top: '2rem' },
+                  { top: '8rem' },
+                  { top: '5rem' },
+                  { top: '10rem' },
+                  { top: '15rem' },
+                  { top: '12rem' },
+                  { top: '18rem' },
+                  { top: '22rem' }
+                ];
+                return (
+                  <div 
+                    key={index} 
+                    className="relative animate-scale-in flex justify-center" 
+                    style={{ 
+                      animationDelay: `${0.8 + index * 0.1}s`,
+                      ...positions[index]
+                    }}
+                  >
+                    <div className="relative group">
+                      <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
+                      <img 
+                        src={photo.url} 
+                        alt={photo.caption}
+                        className="w-48 h-64 object-cover rounded-2xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
+                        style={{
+                          transform: `rotate(${index % 3 === 0 ? '3deg' : index % 3 === 1 ? '-3deg' : '1deg'})`
+                        }}
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
