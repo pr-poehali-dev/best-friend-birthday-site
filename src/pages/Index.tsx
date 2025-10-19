@@ -149,10 +149,22 @@ export default function Index() {
 
   return (
     <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pink-200 via-purple-100 to-rose-200">
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-rose-300/40 rounded-full blur-3xl translate-x-1/2"></div>
       <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-pink-300/40 rounded-full blur-3xl translate-y-1/2"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-400/30 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-400/30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute top-1/2 left-0 w-52 h-52 bg-rose-400/30 rounded-full blur-2xl -translate-x-1/3"></div>
+      <div className="absolute top-3/4 right-0 w-60 h-60 bg-pink-400/30 rounded-full blur-2xl translate-x-1/3"></div>
+      
+      <div className="absolute top-20 left-10 text-6xl opacity-20 animate-pulse">🎈</div>
+      <div className="absolute top-40 right-20 text-5xl opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }}>🎉</div>
+      <div className="absolute top-60 left-1/4 text-4xl opacity-15 animate-pulse" style={{ animationDelay: '1s' }}>✨</div>
+      <div className="absolute bottom-40 right-1/4 text-5xl opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }}>🎊</div>
+      <div className="absolute bottom-60 left-20 text-6xl opacity-15 animate-pulse" style={{ animationDelay: '0.8s' }}>💖</div>
+      <div className="absolute top-1/3 right-10 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.2s' }}>🌟</div>
+      <div className="absolute bottom-1/3 left-1/3 text-5xl opacity-15 animate-pulse" style={{ animationDelay: '0.3s' }}>🎀</div>
+      <div className="absolute top-1/2 right-1/3 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.8s' }}>💝</div>
+      
       <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
         
         <section className="text-center mb-20 animate-fade-in">
