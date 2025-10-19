@@ -154,10 +154,7 @@ export default function Index() {
           <div className="flex flex-wrap justify-center gap-6">
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 shadow-lg hover:shadow-xl transition-all">
-                  <Icon name="Camera" size={24} className="mr-2" />
-                  Самые красивые фото
-                </Button>
+                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 shadow-lg hover:shadow-xl transition-all">Самые красивые фотки</Button>
               </DialogTrigger>
               <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
