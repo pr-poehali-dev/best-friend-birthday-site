@@ -149,7 +149,7 @@ export default function Index() {
 
         <section className="mb-20 animate-fade-in text-center" style={{ animationDelay: '0.4s' }}>
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-            Наши фото
+            Фото реальной богини
           </h2>
           <div className="flex flex-wrap justify-center gap-6">
             <Dialog>
