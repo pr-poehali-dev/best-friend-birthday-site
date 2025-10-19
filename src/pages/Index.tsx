@@ -244,8 +244,8 @@ export default function Index() {
                       }}
                     >
                       <div className="relative group">
-                        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-gray-400 to-gray-600 rounded-full shadow-2xl flex items-center justify-center z-20 border-2 border-gray-500">
-                          <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
+                        <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-br from-red-700 to-red-900 rounded-full shadow-2xl flex items-center justify-center z-20 border-2 border-red-800">
+                          <div className="w-1.5 h-1.5 bg-red-950 rounded-full"></div>
                         </div>
                         <img 
                           src={photo.url} 
