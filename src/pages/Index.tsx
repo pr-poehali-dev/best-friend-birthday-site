@@ -178,10 +178,7 @@ export default function Index() {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-purple-300 hover:bg-purple-50 shadow-lg hover:shadow-xl transition-all">
-                  <Icon name="Laugh" size={24} className="mr-2" />
-                  Неудачные фото
-                </Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-purple-300 hover:bg-purple-50 shadow-lg hover:shadow-xl transition-all">Неудачные фотки</Button>
               </DialogTrigger>
               <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
