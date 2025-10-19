@@ -288,7 +288,7 @@ export default function Index() {
                         <img 
                           src={photo.url} 
                           alt={photo.caption}
-                          className="w-72 h-96 object-cover rounded-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
+                          className="w-72 h-96 object-cover rounded-2xl border-4 border-white group-hover:scale-110 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)] group-hover:border-pink-400 group-hover:brightness-110 transition-all duration-300 cursor-pointer"
                           style={{
                             transform: `rotate(${index % 3 === 0 ? '2deg' : index % 3 === 1 ? '-2deg' : '0deg'})`
                           }}
