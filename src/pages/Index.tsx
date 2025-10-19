@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 export default function Index() {
   const memories = [
@@ -42,6 +44,29 @@ export default function Index() {
     "Здоровья, счастья, любви и вдохновения на каждый новый день"
   ];
 
+  const friendsGreetings = [
+    {
+      name: "Аня",
+      message: "Лизочка, с днём рождения! Ты самый светлый и добрый человек, которого я знаю. Желаю тебе счастья и улыбок каждый день!",
+      icon: "Star"
+    },
+    {
+      name: "Максим",
+      message: "Лиза, поздравляю! Пусть все твои мечты сбываются, а жизнь дарит только приятные сюрпризы!",
+      icon: "Smile"
+    },
+    {
+      name: "Катя",
+      message: "С днём рождения, солнышко! Ты делаешь этот мир ярче. Люблю тебя!",
+      icon: "Heart"
+    },
+    {
+      name: "Дима",
+      message: "Лизуня, с праздником! Оставайся такой же весёлой и жизнерадостной. Ты лучшая!",
+      icon: "PartyPopper"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-accent via-background to-primary/20">
       <div className="container mx-auto px-4 py-12 max-w-6xl">
@@ -59,6 +84,43 @@ export default function Index() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             В этот особенный для тебя день я хотел бы подарить то, что уверен не дарил ещё никто)
           </p>
+          <div className="mt-8">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
+                  <Icon name="MessageCircleHeart" size={24} className="mr-2" />
+                  Поздравления от друзей
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+                <DialogHeader>
+                  <DialogTitle className="text-3xl text-center mb-6">
+                    Поздравления от твоих друзей 💕
+                  </DialogTitle>
+                </DialogHeader>
+                <div className="space-y-6">
+                  {friendsGreetings.map((greeting, index) => (
+                    <div 
+                      key={index}
+                      className="bg-accent/30 rounded-2xl p-6 border border-primary/10 hover:border-primary/30 transition-all"
+                    >
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="p-2 bg-primary/20 rounded-full">
+                          <Icon name={greeting.icon} size={20} className="text-primary" />
+                        </div>
+                        <h3 className="text-xl font-semibold text-card-foreground">
+                          {greeting.name}
+                        </h3>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed pl-11">
+                        {greeting.message}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </DialogContent>
+            </Dialog>
+          </div>
         </section>
 
         <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.2s' }}>
