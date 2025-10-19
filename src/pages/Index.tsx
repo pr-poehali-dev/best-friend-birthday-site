@@ -10,8 +10,13 @@ export default function Index() {
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      if (container.scrollLeft <= 0) {
+      if (container.scrollLeft <= 50) {
+        container.style.scrollBehavior = 'auto';
         container.scrollLeft = container.scrollWidth - container.clientWidth;
+        setTimeout(() => {
+          container.style.scrollBehavior = 'smooth';
+          container.scrollBy({ left: -400, behavior: 'smooth' });
+        }, 50);
       } else {
         container.scrollBy({ left: -400, behavior: 'smooth' });
       }
@@ -21,8 +26,13 @@ export default function Index() {
   const scrollRight = () => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current;
-      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth - 50) {
+        container.style.scrollBehavior = 'auto';
         container.scrollLeft = 0;
+        setTimeout(() => {
+          container.style.scrollBehavior = 'smooth';
+          container.scrollBy({ left: 400, behavior: 'smooth' });
+        }, 50);
       } else {
         container.scrollBy({ left: 400, behavior: 'smooth' });
       }
