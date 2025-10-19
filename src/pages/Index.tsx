@@ -178,24 +178,22 @@ export default function Index() {
 
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-purple-300 hover:bg-purple-50 shadow-lg hover:shadow-xl transition-all">Неудачные фотки</Button>
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-purple-300 hover:bg-purple-50 shadow-lg hover:shadow-xl transition-all">
+                  <Icon name="Laugh" size={24} className="mr-2" />
+                  Неудачные фото
+                </Button>
               </DialogTrigger>
-              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+              <DialogContent className="max-w-2xl">
                 <DialogHeader>
                   <DialogTitle className="text-3xl text-center mb-6">
                     Неудачные фото 😄
                   </DialogTitle>
                 </DialogHeader>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {photos.map((photo, index) => (
-                    <div key={index} className="overflow-hidden rounded-2xl">
-                      <img 
-                        src={photo.url} 
-                        alt={photo.caption}
-                        className="w-full h-80 object-cover"
-                      />
-                    </div>
-                  ))}
+                <div className="text-center py-8">
+                  <Icon name="Sparkles" size={64} className="text-pink-500 mx-auto mb-6" />
+                  <p className="text-2xl text-gray-700 leading-relaxed">
+                    У данного человека отсутствуют фотки ниже оценки 11/10
+                  </p>
                 </div>
               </DialogContent>
             </Dialog>
