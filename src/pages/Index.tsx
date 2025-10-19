@@ -158,9 +158,7 @@ export default function Index() {
               </DialogTrigger>
               <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-6">
-                    Самые красивые фото 📸
-                  </DialogTitle>
+                  <DialogTitle className="text-3xl text-center mb-6">Самые красивые фотки 📸</DialogTitle>
                 </DialogHeader>
                 <div className="grid md:grid-cols-2 gap-6">
                   {photos.map((photo, index) => (
