@@ -4,7 +4,7 @@ import Icon from "@/components/ui/icon";
 export default function Index() {
   const memories = [
     {
-      title: "Первая встреча",
+      title: "Первое знакомство",
       description: "Помню, как мы познакомились... С тех пор столько всего было пережито вместе!",
       icon: "Sparkles"
     },
