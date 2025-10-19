@@ -147,52 +147,6 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="mb-20 animate-fade-in text-center" style={{ animationDelay: '0.4s' }}>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
-            Фото реальной богини
-          </h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button size="lg" className="text-lg px-8 py-6 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 shadow-lg hover:shadow-xl transition-all">Самые красивые фотки</Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
-                <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-6">Самые красивые фотки 📸</DialogTitle>
-                </DialogHeader>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {photos.map((photo, index) => (
-                    <div key={index} className="overflow-hidden rounded-2xl">
-                      <img 
-                        src={photo.url} 
-                        alt={photo.caption}
-                        className="w-full h-80 object-cover"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </DialogContent>
-            </Dialog>
-
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-2 border-purple-300 hover:bg-purple-50 shadow-lg hover:shadow-xl transition-all">Неудачные фотки</Button>
-              </DialogTrigger>
-              <DialogContent className="max-w-2xl">
-                <DialogHeader>
-                  <DialogTitle className="text-3xl text-center mb-6">Неудачные фотки</DialogTitle>
-                </DialogHeader>
-                <div className="text-center py-8">
-                  <div className="inline-block p-4 bg-red-100 rounded-full mb-6">
-                    <Icon name="X" size={64} className="text-red-500" />
-                  </div>
-                  <p className="text-2xl text-gray-700 leading-relaxed">У данного человека отсутствуют фотки ниже оценки 11/10!</p>
-                </div>
-              </DialogContent>
-            </Dialog>
-          </div>
-        </section>
-
         <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <div className="bg-card/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-primary/20">
             <div className="text-center mb-8">
@@ -224,6 +178,40 @@ export default function Index() {
                   ещё 99+ пожеланий
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text text-transparent">
+            Фотки реальной богини
+          </h2>
+          <div className="relative max-w-6xl mx-auto">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+            <div className="flex justify-around items-start pt-8 flex-wrap gap-8">
+              {photos.map((photo, index) => (
+                <div 
+                  key={index} 
+                  className="relative animate-scale-in" 
+                  style={{ 
+                    animationDelay: `${0.8 + index * 0.15}s`,
+                    marginTop: index % 2 === 0 ? '0' : '3rem'
+                  }}
+                >
+                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 w-0.5 h-8 bg-primary"></div>
+                  <div className="relative group">
+                    <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg"></div>
+                    <img 
+                      src={photo.url} 
+                      alt={photo.caption}
+                      className="w-64 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white transform rotate-2 group-hover:rotate-0 transition-transform duration-300"
+                      style={{
+                        transform: `rotate(${index % 2 === 0 ? '2deg' : '-2deg'})`
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
