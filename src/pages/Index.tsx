@@ -87,10 +87,7 @@ export default function Index() {
           <div className="mt-8">
             <Dialog>
               <DialogTrigger asChild>
-                <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">
-                  <Icon name="MessageCircleHeart" size={24} className="mr-2" />
-                  Поздравления от друзей
-                </Button>
+                <Button size="lg" className="text-lg px-8 py-6 shadow-lg hover:shadow-xl transition-all">Поздравления от не менее значимых для тебя людей)</Button>
               </DialogTrigger>
               <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
                 <DialogHeader>
