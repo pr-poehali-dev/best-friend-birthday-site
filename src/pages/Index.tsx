@@ -1,14 +1,163 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Card, CardContent } from "@/components/ui/card";
+import Icon from "@/components/ui/icon";
 
-const Index = () => {
+export default function Index() {
+  const memories = [
+    {
+      title: "Первая встреча",
+      description: "Помню, как мы познакомились... С тех пор столько всего было пережито вместе!",
+      icon: "Sparkles"
+    },
+    {
+      title: "Наши приключения",
+      description: "Все эти смешные моменты, путешествия, бесконечные разговоры до утра...",
+      icon: "Heart"
+    },
+    {
+      title: "Поддержка",
+      description: "Ты всегда рядом, когда нужно. Спасибо за то, что ты есть в моей жизни!",
+      icon: "Users"
+    }
+  ];
+
+  const photos = [
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/16703496-ce3d-4d9f-8b8e-edb241db93cf.jpg",
+      caption: "Наши яркие моменты"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/708196b9-c8c9-45dd-80a1-9aefd918496a.jpg",
+      caption: "Дружба навсегда"
+    },
+    {
+      url: "https://cdn.poehali.dev/projects/615676b8-1605-4479-908b-365d01866c93/files/010cd53a-77cb-46b2-8e9f-b665034624ee.jpg",
+      caption: "Особенные дни"
+    }
+  ];
+
+  const wishes = [
+    "Пусть каждый твой день будет наполнен радостью и улыбками",
+    "Желаю тебе исполнения всех заветных мечтаний",
+    "Пусть рядом всегда будут верные друзья и любящие люди",
+    "Здоровья, счастья, любви и вдохновения на каждый новый день"
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="min-h-screen bg-gradient-to-br from-accent via-background to-primary/20">
+      <div className="container mx-auto px-4 py-12 max-w-6xl">
+        
+        <section className="text-center mb-20 animate-fade-in">
+          <div className="inline-block mb-6">
+            <Icon name="Cake" size={64} className="text-primary mx-auto" />
+          </div>
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 text-primary-foreground">
+            С Днём Рождения!
+          </h1>
+          <p className="text-2xl md:text-3xl text-muted-foreground mb-4">
+            Моя любимая подруга
+          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Этот особенный день создан специально для тебя, чтобы напомнить, 
+            как много ты значишь для меня
+          </p>
+        </section>
+
+        <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary-foreground">
+            Наши воспоминания
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {memories.map((memory, index) => (
+              <Card 
+                key={index} 
+                className="bg-card/80 backdrop-blur-sm border-primary/20 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 animate-scale-in"
+                style={{ animationDelay: `${0.3 + index * 0.1}s` }}
+              >
+                <CardContent className="p-8">
+                  <div className="mb-4 flex justify-center">
+                    <div className="p-4 bg-primary/10 rounded-full">
+                      <Icon name={memory.icon} size={32} className="text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3 text-center text-card-foreground">
+                    {memory.title}
+                  </h3>
+                  <p className="text-muted-foreground text-center leading-relaxed">
+                    {memory.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-primary-foreground">
+            Фотогалерея
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {photos.map((photo, index) => (
+              <div 
+                key={index} 
+                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 animate-scale-in"
+                style={{ animationDelay: `${0.5 + index * 0.1}s` }}
+              >
+                <img 
+                  src={photo.url} 
+                  alt={photo.caption}
+                  className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                  <p className="text-white p-6 text-lg font-medium w-full">
+                    {photo.caption}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-20 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="bg-card/80 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-primary/20">
+            <div className="text-center mb-8">
+              <Icon name="Gift" size={48} className="text-primary mx-auto mb-4" />
+              <h2 className="text-4xl md:text-5xl font-bold text-card-foreground">
+                Мои пожелания
+              </h2>
+            </div>
+            <div className="space-y-6 max-w-3xl mx-auto">
+              {wishes.map((wish, index) => (
+                <div 
+                  key={index} 
+                  className="flex items-start gap-4 animate-fade-in"
+                  style={{ animationDelay: `${0.7 + index * 0.1}s` }}
+                >
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-3 h-3 rounded-full bg-primary"></div>
+                  </div>
+                  <p className="text-lg text-card-foreground leading-relaxed">
+                    {wish}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="text-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
+          <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl p-12 shadow-xl">
+            <Icon name="HeartHandshake" size={56} className="text-primary mx-auto mb-6" />
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
+              Ты — самая лучшая подруга!
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Спасибо за то, что делаешь мою жизнь ярче. 
+              С Днём Рождения, моя дорогая! Люблю тебя! 💕
+            </p>
+          </div>
+        </section>
+
       </div>
     </div>
   );
-};
-
-export default Index;
+}
