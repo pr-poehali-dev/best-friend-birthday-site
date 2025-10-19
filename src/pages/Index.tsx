@@ -207,33 +207,22 @@ export default function Index() {
             Фотки реальной богини
           </h2>
           <div className="relative max-w-6xl mx-auto px-4">
-            <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: 1 }}>
-              <line x1="10%" y1="0" x2="10%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-              <line x1="35%" y1="0" x2="35%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-              <line x1="65%" y1="0" x2="65%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-              <line x1="90%" y1="0" x2="90%" y2="100%" stroke="hsl(var(--primary))" strokeWidth="2" opacity="0.6" />
-            </svg>
-            <div className="grid grid-cols-4 gap-8 relative" style={{ zIndex: 2 }}>
+            <div className="flex justify-around gap-8 flex-wrap">
               {photos.map((photo, index) => {
-                const positions = [
-                  { top: '2rem' },
-                  { top: '8rem' },
-                  { top: '5rem' },
-                  { top: '10rem' },
-                  { top: '15rem' },
-                  { top: '12rem' },
-                  { top: '18rem' },
-                  { top: '22rem' }
-                ];
+                const column = index % 4;
+                const row = Math.floor(index / 4);
+                const offsetTop = column % 2 === 0 ? row * 22 : row * 22 + 6;
+                
                 return (
                   <div 
                     key={index} 
-                    className="relative animate-scale-in flex justify-center" 
+                    className="relative animate-scale-in flex flex-col items-center" 
                     style={{ 
                       animationDelay: `${0.8 + index * 0.1}s`,
-                      ...positions[index]
+                      marginTop: `${offsetTop}rem`
                     }}
                   >
+                    <div className="w-0.5 h-8 bg-primary mb-2"></div>
                     <div className="relative group">
                       <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
                       <img 
