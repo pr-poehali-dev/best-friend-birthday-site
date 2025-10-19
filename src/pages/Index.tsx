@@ -156,14 +156,14 @@ export default function Index() {
       <div className="absolute top-1/2 left-0 w-52 h-52 bg-rose-400/30 rounded-full blur-2xl -translate-x-1/3"></div>
       <div className="absolute top-3/4 right-0 w-60 h-60 bg-pink-400/30 rounded-full blur-2xl translate-x-1/3"></div>
       
-      <div className="absolute top-20 left-10 text-6xl opacity-20 animate-pulse">⭐</div>
-      <div className="absolute top-40 right-20 text-5xl opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }}>✨</div>
-      <div className="absolute top-60 left-1/4 text-4xl opacity-15 animate-pulse" style={{ animationDelay: '1s' }}>🌟</div>
-      <div className="absolute bottom-40 right-1/4 text-5xl opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }}>⭐</div>
-      <div className="absolute bottom-60 left-20 text-6xl opacity-15 animate-pulse" style={{ animationDelay: '0.8s' }}>✨</div>
-      <div className="absolute top-1/3 right-10 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.2s' }}>🌟</div>
-      <div className="absolute bottom-1/3 left-1/3 text-5xl opacity-15 animate-pulse" style={{ animationDelay: '0.3s' }}>⭐</div>
-      <div className="absolute top-1/2 right-1/3 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.8s' }}>✨</div>
+      <div className="absolute top-20 left-10 text-6xl opacity-20 animate-pulse">💖</div>
+      <div className="absolute top-40 right-20 text-5xl opacity-20 animate-pulse" style={{ animationDelay: '0.5s' }}>💕</div>
+      <div className="absolute top-60 left-1/4 text-4xl opacity-15 animate-pulse" style={{ animationDelay: '1s' }}>💗</div>
+      <div className="absolute bottom-40 right-1/4 text-5xl opacity-20 animate-pulse" style={{ animationDelay: '1.5s' }}>💖</div>
+      <div className="absolute bottom-60 left-20 text-6xl opacity-15 animate-pulse" style={{ animationDelay: '0.8s' }}>💕</div>
+      <div className="absolute top-1/3 right-10 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.2s' }}>💗</div>
+      <div className="absolute bottom-1/3 left-1/3 text-5xl opacity-15 animate-pulse" style={{ animationDelay: '0.3s' }}>💖</div>
+      <div className="absolute top-1/2 right-1/3 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.8s' }}>💕</div>
       
       {[...Array(20)].map((_, i) => (
         <div
@@ -171,11 +171,11 @@ export default function Index() {
           className="confetti text-2xl"
           style={{
             left: `${Math.random() * 100}%`,
-            animationDuration: `${3 + Math.random() * 4}s`,
+            animationDuration: `${8 + Math.random() * 6}s`,
             animationDelay: `${Math.random() * 5}s`,
           }}
         >
-          {['⭐', '✨', '🌟'][Math.floor(Math.random() * 3)]}
+          {['💖', '💕', '💗'][Math.floor(Math.random() * 3)]}
         </div>
       ))}
       
