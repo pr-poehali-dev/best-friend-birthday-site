@@ -7,6 +7,38 @@ import { useRef } from "react";
 export default function Index() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const scrollWidth = container.scrollWidth;
+      
+      const singleSetWidth = scrollWidth / 3;
+      
+      if (scrollLeft >= singleSetWidth * 2) {
+        container.scrollLeft = scrollLeft - singleSetWidth;
+      } else if (scrollLeft <= 0) {
+        container.scrollLeft = singleSetWidth;
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    container.scrollLeft = container.scrollWidth / 3;
+
+    const autoScroll = setInterval(() => {
+      if (container) {
+        container.scrollBy({ left: 1, behavior: 'auto' });
+      }
+    }, 20);
+
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+      clearInterval(autoScroll);
+    };
+  }, []);
+
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
