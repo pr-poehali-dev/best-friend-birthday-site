@@ -207,7 +207,8 @@ export default function Index() {
             Фотки реальной богини
           </h2>
           <div className="relative max-w-6xl mx-auto px-4">
-            <div className="flex justify-around gap-8 flex-wrap">
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+            <div className="flex justify-around gap-8 flex-wrap pt-1">
               {photos.map((photo, index) => {
                 const column = index % 4;
                 const row = Math.floor(index / 4);
@@ -222,7 +223,7 @@ export default function Index() {
                       marginTop: `${offsetTop}rem`
                     }}
                   >
-                    <div className="w-0.5 h-8 bg-primary mb-2"></div>
+                    <div className="w-0.5 bg-primary mb-2" style={{ height: `${offsetTop + 2}rem` }}></div>
                     <div className="relative group">
                       <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
                       <img 
