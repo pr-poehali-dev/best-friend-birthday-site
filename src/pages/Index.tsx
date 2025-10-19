@@ -148,8 +148,12 @@ export default function Index() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-accent via-background to-primary/20">
-      <div className="container mx-auto px-4 py-12 max-w-6xl">
+    <div className="min-h-screen relative overflow-hidden bg-gradient-to-br from-pink-200 via-purple-100 to-rose-200">
+      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-300/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+      <div className="absolute top-1/4 right-0 w-80 h-80 bg-rose-300/40 rounded-full blur-3xl translate-x-1/2"></div>
+      <div className="absolute bottom-0 left-1/4 w-72 h-72 bg-pink-300/40 rounded-full blur-3xl translate-y-1/2"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-purple-400/30 rounded-full blur-3xl"></div>
+      <div className="container mx-auto px-4 py-12 max-w-6xl relative z-10">
         
         <section className="text-center mb-20 animate-fade-in">
           <div className="inline-block mb-6">
