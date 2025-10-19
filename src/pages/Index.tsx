@@ -54,7 +54,7 @@ export default function Index() {
             С Днём Рождения!
           </h1>
           <p className="text-2xl md:text-3xl text-muted-foreground mb-4">
-            Самую лучшую Лизу в мире
+            Самой лучшей Лизе в мире
           </p>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             В этот особенный для тебя день я хотел бы подарить то, что уверен не дарил ещё никто)
