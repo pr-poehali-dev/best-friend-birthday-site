@@ -2,10 +2,34 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 export default function Index() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft;
+      const scrollWidth = container.scrollWidth;
+      const clientWidth = container.clientWidth;
+      
+      const singleSetWidth = scrollWidth / 3;
+      
+      if (scrollLeft >= singleSetWidth * 2) {
+        container.scrollLeft = scrollLeft - singleSetWidth;
+      } else if (scrollLeft <= 0) {
+        container.scrollLeft = singleSetWidth;
+      }
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    container.scrollLeft = scrollWidth / 3;
+
+    return () => container.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
