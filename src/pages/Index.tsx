@@ -9,13 +9,23 @@ export default function Index() {
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+      const container = scrollContainerRef.current;
+      if (container.scrollLeft <= 0) {
+        container.scrollLeft = container.scrollWidth - container.clientWidth;
+      } else {
+        container.scrollBy({ left: -400, behavior: 'smooth' });
+      }
     }
   };
 
   const scrollRight = () => {
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+      const container = scrollContainerRef.current;
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        container.scrollLeft = 0;
+      } else {
+        container.scrollBy({ left: 400, behavior: 'smooth' });
+      }
     }
   };
   const memories = [
@@ -250,7 +260,7 @@ export default function Index() {
                         <img 
                           src={photo.url} 
                           alt={photo.caption}
-                          className="w-72 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
+                          className="w-72 h-96 object-cover rounded-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
                           style={{
                             transform: `rotate(${index % 3 === 0 ? '2deg' : index % 3 === 1 ? '-2deg' : '0deg'})`
                           }}
