@@ -2,8 +2,22 @@ import { Card, CardContent } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { useRef } from "react";
 
 export default function Index() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
   const memories = [
     {
       title: "Первое знакомство",
@@ -207,30 +221,38 @@ export default function Index() {
             Фотки реальной богини
           </h2>
           <div className="relative max-w-6xl mx-auto px-4">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
-            <div className="relative pt-1 overflow-x-auto scrollbar-hide">
-              <div className="flex gap-12 px-8 pb-4" style={{ width: 'max-content' }}>
+            <Button 
+              onClick={scrollLeft}
+              size="icon"
+              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-primary/90 hover:bg-primary shadow-2xl h-14 w-14 rounded-full"
+            >
+              <Icon name="ChevronLeft" size={32} />
+            </Button>
+            
+            <div 
+              ref={scrollContainerRef}
+              className="relative overflow-x-auto scrollbar-hide px-16"
+            >
+              <div className="flex gap-8 py-4" style={{ width: 'max-content' }}>
                 {photos.map((photo, index) => {
-                  const offsetTop = index % 2 === 0 ? 2 : 8;
-                  
                   return (
                     <div 
                       key={index} 
-                      className="relative animate-scale-in flex flex-col items-center flex-shrink-0" 
+                      className="relative animate-scale-in flex-shrink-0" 
                       style={{ 
-                        animationDelay: `${0.8 + index * 0.1}s`,
-                        marginTop: `${offsetTop}rem`
+                        animationDelay: `${0.8 + index * 0.1}s`
                       }}
                     >
-                      <div className="w-0.5 bg-primary" style={{ height: `${offsetTop}rem` }}></div>
                       <div className="relative group">
-                        <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10"></div>
+                        <div className="absolute -top-4 left-4 w-8 h-8 bg-gray-700 rounded-full shadow-xl flex items-center justify-center z-20">
+                          <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
+                        </div>
                         <img 
                           src={photo.url} 
                           alt={photo.caption}
-                          className="w-64 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
+                          className="w-72 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white group-hover:scale-105 transition-transform duration-300"
                           style={{
-                            transform: `rotate(${index % 3 === 0 ? '3deg' : index % 3 === 1 ? '-3deg' : '1deg'})`
+                            transform: `rotate(${index % 3 === 0 ? '2deg' : index % 3 === 1 ? '-2deg' : '0deg'})`
                           }}
                         />
                       </div>
@@ -240,6 +262,13 @@ export default function Index() {
               </div>
             </div>
 
+            <Button 
+              onClick={scrollRight}
+              size="icon"
+              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-primary/90 hover:bg-primary shadow-2xl h-14 w-14 rounded-full"
+            >
+              <Icon name="ChevronRight" size={32} />
+            </Button>
           </div>
         </section>
 
