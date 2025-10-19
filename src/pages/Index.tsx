@@ -165,7 +165,7 @@ export default function Index() {
       <div className="absolute bottom-1/3 left-1/3 text-5xl opacity-15 animate-pulse" style={{ animationDelay: '0.3s' }}>💖</div>
       <div className="absolute top-1/2 right-1/3 text-4xl opacity-20 animate-pulse" style={{ animationDelay: '1.8s' }}>💕</div>
       
-      {[...Array(20)].map((_, i) => (
+      {[...Array(12)].map((_, i) => (
         <div
           key={i}
           className="confetti text-2xl"
