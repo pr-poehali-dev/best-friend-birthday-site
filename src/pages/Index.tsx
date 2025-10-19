@@ -190,7 +190,9 @@ export default function Index() {
                   </DialogTitle>
                 </DialogHeader>
                 <div className="text-center py-8">
-                  <Icon name="Sparkles" size={64} className="text-pink-500 mx-auto mb-6" />
+                  <div className="inline-block p-4 bg-red-100 rounded-full mb-6">
+                    <Icon name="X" size={64} className="text-red-500" />
+                  </div>
                   <p className="text-2xl text-gray-700 leading-relaxed">
                     У данного человека отсутствуют фотки ниже оценки 11/10
                   </p>
