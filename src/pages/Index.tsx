@@ -375,9 +375,7 @@ export default function Index() {
         <section className="text-center animate-fade-in" style={{ animationDelay: '0.9s' }}>
           <div className="bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-3xl p-12 shadow-xl">
             <Icon name="HeartHandshake" size={56} className="text-primary mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary-foreground">
-              Ты — самая лучшая подруга!
-            </h2>
+            <h2 className="text-3xl md:text-4xl mb-6 text-primary-foreground font-extrabold">Ты - моя самая лучшая подруга!</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Спасибо тебе за то, что делаешь мою жизнь такой яркой, какая она есть сейчас! Ещё раз поздравляю тебя с Днём Рождения, люблю и обожаю тебя!</p>
           </div>
         </section>
